@@ -19,7 +19,7 @@ namespace Kolokwium._1
         public string Autor;
         public string Tytul;
         public string Tresc;
-        public string Tagi;
+        public string[] Tagi;
         public DateTime Czas;
         
         public Post(string tytul, string autor,string tresc, string tagi, DateTime czas)
@@ -62,16 +62,6 @@ namespace Kolokwium._1
             int wiek = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Podaj Typ Konta(Rozliczeniowe lub Oszczędnościowe):");
             Enum.TryParse(Console.ReadLine(), out typKonta typkonta);
-
-            switch (typkonta)
-            {
-                case typKonta.Oszczednosciowe:
-                    break;
-                case typKonta.Rozliczeniowe:
-                    break;
-                default:
-                    break;
-            }
             
             Console.WriteLine("Imie: {0} \n Nazwisko: {1} \n Wiek: {2} \n"
                 ,imie, nazwisko, wiek);
@@ -85,6 +75,7 @@ namespace Kolokwium._1
                     Console.WriteLine("Typ Konta: Rozliczeniowe\n");
                     break;
                 default:
+                    Console.WriteLine("Brak typu konta");
                     break;
             }
         }
