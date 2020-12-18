@@ -12,8 +12,6 @@ namespace Kolokwium._1
         Rozliczeniowe 
     }
     
-    
-    
     //zadanie3
     class Post
     {
@@ -50,7 +48,6 @@ namespace Kolokwium._1
                 , Tytul, Autor, Tresc, Tagi, Czas);
         }
     }
-    
     class Program
     {
         //zadanie1
@@ -62,8 +59,8 @@ namespace Kolokwium._1
             string nazwisko = Console.ReadLine();
             Console.WriteLine("Podaj Wiek:");
             string wiek = Console.ReadLine();
-            Console.WriteLine("Podaj Typ Konta:");
-            string typkonta = Console.ReadLine();
+            Console.WriteLine("Podaj Typ Konta(Rozliczeniowe lub Oszczędnościowe):");
+            Enum.TryParse(Console.ReadLine(), out typKonta typkonta);
 
             Console.WriteLine("Imie: {0} \n Nazwisko: {1} \n Wiek: {2} \n Typ Konta: {3}"
                 , imie, nazwisko, wiek, typkonta);
@@ -102,22 +99,33 @@ namespace Kolokwium._1
                 }
             }
         }
-
         static void Main(string[] args)
         {
             //zadanie1 - test
-            //wczytaj();
+            Console.WriteLine("Zadanie1");
+            wczytaj();
             
             //zadanie2 - test
             
-            DowolnaParam("1","2","3","5","6","7");
+             Console.WriteLine("Zadanie2");
+             Console.WriteLine("Parzyste");
+             DowolnaParam("1","2","3","5","6","7");
+             Console.WriteLine("Nieparzyste");
+             DowolnaParam("1","2","3","5","6","7","8");
             
-            //zadanie3 - test
-
-            DateTime time = new DateTime(2002, 1, 1);
-
-            Post post = new Post("ddd", "Katana", "ddd", "Tag" , time);
+             //zadanie3 - test
             
+             Console.WriteLine("Zadanie3");
+             DateTime time = new DateTime(2002, 1, 1);
+             DateTime time2 = new DateTime(1999, 1, 1);
+             DateTime time3 = new DateTime(2013, 1, 1);
+            
+             Post post = new Post("", "Katana", "ddd", "Tag" , time);
+             post.wypisz();
+             Post post2 = new Post("ddd", "Katana", "ddd", "Tag" , time2);
+             post2.wypisz();
+             Post post3 = new Post("ddd", "Katana", "ddd", "Tag" , time3);
+             post3.wypisz();
         }
     }
 }
