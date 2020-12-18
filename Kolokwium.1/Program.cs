@@ -72,17 +72,41 @@ namespace Kolokwium._1
         //zadanie2
         static void DowolnaParam(params string[] parametr)
         {
-            string napis = "";
-            
-                 napis = String.Join("\n",parametr);
-            
-            Console.WriteLine(napis);
+            if (parametr.Length % 2 == 1)
+            {
+                for (int i = 0; i < parametr.Length-1; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        Console.Write(parametr[i] + ":");
+                    }
+                    else if (i % 2 == 1)
+                    {
+                        Console.Write(parametr[i] + "\n");
+                    }
+                }
+                Console.Write(parametr.Length + ".");
+            }
+            else if(parametr.Length % 2 == 0)
+            {
+                for (int i = 0; i < parametr.Length; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        Console.Write(parametr[i] + ":");
+                    }
+                    else if (i % 2 == 1)
+                    {
+                        Console.Write(parametr[i] + "\n");
+                    }
+                }
+            }
         }
 
         static void Main(string[] args)
         {
             //zadanie1 - test
-            wczytaj();
+            //wczytaj();
             
             //zadanie2 - test
             
@@ -93,7 +117,6 @@ namespace Kolokwium._1
             DateTime time = new DateTime(2002, 1, 1);
 
             Post post = new Post("ddd", "Katana", "ddd", "Tag" , time);
-            
             
         }
     }
