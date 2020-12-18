@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Reflection;
 using System.Text;
 using System.Threading;
@@ -58,12 +59,34 @@ namespace Kolokwium._1
             Console.WriteLine("Podaj Nazwisko:");
             string nazwisko = Console.ReadLine();
             Console.WriteLine("Podaj Wiek:");
-            string wiek = Console.ReadLine();
+            int wiek = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Podaj Typ Konta(Rozliczeniowe lub Oszczędnościowe):");
             Enum.TryParse(Console.ReadLine(), out typKonta typkonta);
 
-            Console.WriteLine("Imie: {0} \n Nazwisko: {1} \n Wiek: {2} \n Typ Konta: {3}"
-                , imie, nazwisko, wiek, typkonta);
+            switch (typkonta)
+            {
+                case typKonta.Oszczednosciowe:
+                    break;
+                case typKonta.Rozliczeniowe:
+                    break;
+                default:
+                    break;
+            }
+            
+            Console.WriteLine("Imie: {0} \n Nazwisko: {1} \n Wiek: {2} \n"
+                ,imie, nazwisko, wiek);
+            
+            switch (typkonta)
+            {
+                case typKonta.Oszczednosciowe:
+                    Console.WriteLine("Typ Konta: Oszczędnościowe\n");
+                    break;
+                case typKonta.Rozliczeniowe:
+                    Console.WriteLine("Typ Konta: Rozliczeniowe\n");
+                    break;
+                default:
+                    break;
+            }
         }
         
         //zadanie2
