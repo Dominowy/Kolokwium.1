@@ -22,17 +22,21 @@ namespace Kolokwium._1
         public string[] Tagi;
         public DateTime Czas;
         
-        public Post(string tytul, string autor,string tresc, string tagi, DateTime czas)
+        public Post(string tytul, string autor,string tresc, string[] tagi, DateTime czas)
         {
             DateTime time = new DateTime(2000, 1, 1);
             
-            if (string.IsNullOrEmpty(tytul) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(tresc) || string.IsNullOrEmpty(tagi))
+            if (string.IsNullOrEmpty(tytul) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(tresc))
             {
                 Console.WriteLine("Czegoś Brakuje!!");
             }
             else if (time.Year - czas.Year >= 0)
             {
                 Console.WriteLine("Za stara data utworzenia!!");
+            }
+            else if (tagi.Length == 0 || tagi == null)
+            {
+                Console.WriteLine("Tablica jest pusta!");
             }
             else
             {
@@ -45,8 +49,9 @@ namespace Kolokwium._1
         }
         public void wypisz()
         {
-            Console.WriteLine("Tytul: {0} \n Autor: {1} \n Tresc: {2} \n tagi: {3} \n Data: {4}"
-                , Tytul, Autor, Tresc, Tagi, Czas);
+             Console.WriteLine("Tytul: {0} \n Autor: {1} \n Tresc: {2} \n tagi: {3} {4} \n Data: {5}"
+                 , Tytul, Autor, Tresc, Tagi[0],Tagi[1], Czas);
+             
         }
     }
     class Program
@@ -115,30 +120,33 @@ namespace Kolokwium._1
         }
         static void Main(string[] args)
         {
-            //zadanie1 - test
-            Console.WriteLine("Zadanie1");
-            wczytaj();
-            
-            //zadanie2 - test
-            
-             Console.WriteLine("Zadanie2");
-             Console.WriteLine("Parzyste");
-             DowolnaParam("1","2","3","5","6","7");
-             Console.WriteLine("Nieparzyste");
-             DowolnaParam("1","2","3","5","6","7","8");
+            // //zadanie1 - test
+            // Console.WriteLine("Zadanie1");
+            // wczytaj();
+            //
+            // //zadanie2 - test
+            //
+            //  Console.WriteLine("Zadanie2");
+            //  Console.WriteLine("Parzyste");
+            //  DowolnaParam("1","2","3","5","6","7");
+            //  Console.WriteLine("Nieparzyste");
+            //  DowolnaParam("1","2","3","5","6","7","8");
             
              //zadanie3 - test
             
              Console.WriteLine("Zadanie3");
              DateTime time = new DateTime(2002, 1, 1);
-             DateTime time2 = new DateTime(1999, 1, 1);
+             DateTime time2 = new DateTime(2002, 1, 1);
              DateTime time3 = new DateTime(2013, 1, 1);
+
+             string[] tab = new string[2] {"dom", "dom2"};
+             string[] tab2 = new string[2] {" "," "};
             
-             Post post = new Post("", "Katana", "ddd", "Tag" , time);
+             Post post = new Post("DDDD", "Katana", "ddd", tab , time);
              post.wypisz();
-             Post post2 = new Post("ddd", "Katana", "ddd", "Tag" , time2);
+             Post post2 = new Post("ddd", "Katana", "ddd", tab2 , time2);
              post2.wypisz();
-             Post post3 = new Post("ddd", "Katana", "ddd", "Tag" , time3);
+             Post post3 = new Post("ddd", "Katana", "ddd", tab , time3);
              post3.wypisz();
         }
     }
