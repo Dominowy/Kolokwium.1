@@ -140,7 +140,7 @@ namespace Kolokwium._1
              DateTime time3 = new DateTime(2013, 1, 1);
 
              string[] tab = new string[2] {"dom", "dom2"};
-             string[] tab2 = new string[2] {" "," "};
+             string[] tab2 = new string[2];
             
              Post post = new Post("DDDD", "Katana", "ddd", tab , time);
              post.wypisz();
