@@ -34,7 +34,7 @@ namespace Kolokwium._1
             {
                 Console.WriteLine("Za stara data utworzenia!!");
             }
-            else if (tagi.Length == 0 || tagi == null)
+            else if (string.IsNullOrEmpty(tagi[0]) || string.IsNullOrEmpty(tagi[1]))
             {
                 Console.WriteLine("Tablica jest pusta!");
             }
@@ -45,6 +45,8 @@ namespace Kolokwium._1
                 Tresc = tresc;
                 Tagi = tagi;
                 Czas = czas;
+
+                wypisz();
             }
         }
         public void wypisz()
@@ -142,12 +144,9 @@ namespace Kolokwium._1
              string[] tab = new string[2] {"dom", "dom2"};
              string[] tab2 = new string[2];
             
-             Post post = new Post("DDDD", "Katana", "ddd", tab , time);
-             post.wypisz();
+             //Post post = new Post("DDDD", "Katana", "ddd", tab , time);
              Post post2 = new Post("ddd", "Katana", "ddd", tab2 , time2);
-             post2.wypisz();
-             Post post3 = new Post("ddd", "Katana", "ddd", tab , time3);
-             post3.wypisz();
+             //Post post3 = new Post("ddd", "Katana", "ddd", tab , time3);
         }
     }
 }
