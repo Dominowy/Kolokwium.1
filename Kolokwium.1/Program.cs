@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 
@@ -90,63 +91,53 @@ namespace Kolokwium._1
         //zadanie2
         static void DowolnaParam(params string[] parametr)
         {
-            if (parametr.Length % 2 == 1)
+            for (int i = 0; i < parametr.Length; i++)
             {
-                for (int i = 0; i < parametr.Length-1; i++)
+                if (i % 2 == 0)
                 {
-                    if (i % 2 == 0)
+                    if (parametr.Length == i+1)
+                    {
+                        Console.Write(parametr[i] + "."); 
+                    }
+                    else
                     {
                         Console.Write(parametr[i] + ":");
-                    }
-                    else if (i % 2 == 1)
-                    {
-                        Console.Write(parametr[i] + "\n");
                     }
                 }
-                Console.Write(parametr.Length + ".");
-            }
-            else if(parametr.Length % 2 == 0)
-            {
-                for (int i = 0; i < parametr.Length; i++)
+                else
                 {
-                    if (i % 2 == 0)
-                    {
-                        Console.Write(parametr[i] + ":");
-                    }
-                    else if (i % 2 == 1)
-                    {
-                        Console.Write(parametr[i] + "\n");
-                    }
+                    Console.Write(parametr[i] + ",");
                 }
             }
         }
         static void Main(string[] args)
         {
-            // //zadanie1 - test
-            // Console.WriteLine("Zadanie1");
-            // wczytaj();
-            //
-            // //zadanie2 - test
-            //
-            //  Console.WriteLine("Zadanie2");
-            //  Console.WriteLine("Parzyste");
-            //  DowolnaParam("1","2","3","5","6","7");
-            //  Console.WriteLine("Nieparzyste");
-            //  DowolnaParam("1","2","3","5","6","7","8");
+            //zadanie1 - test
+            //Console.WriteLine("Zadanie1");
+            //wczytaj();
+            
+            //zadanie2 - test
+            
+             Console.WriteLine("Zadanie2\n");
+             Console.WriteLine("Parzyste\n");
+             DowolnaParam("1","2","3","5","6","7");
+             Console.WriteLine("\n");
+             Console.WriteLine("Nieparzyste\n");
+             DowolnaParam("1","2","3","5","6","7","8");
             
              //zadanie3 - test
             
-             Console.WriteLine("Zadanie3");
-             DateTime time = new DateTime(2002, 1, 1);
-             DateTime time2 = new DateTime(2002, 1, 1);
-             DateTime time3 = new DateTime(2013, 1, 1);
-
-             string[] tab = new string[2] {"dom", "dom2"};
-             string[] tab2 = new string[2];
-            
-             //Post post = new Post("DDDD", "Katana", "ddd", tab , time);
-             Post post2 = new Post("ddd", "Katana", "ddd", tab2 , time2);
-             //Post post3 = new Post("ddd", "Katana", "ddd", tab , time3);
+             // Console.WriteLine("Zadanie3");
+             // DateTime time = new DateTime(2002, 1, 1);
+             // DateTime time2 = new DateTime(2002, 1, 1);
+             // DateTime time3 = new DateTime(2013, 1, 1);
+             //
+             // string[] tab = new string[2] {"dom", "dom2"};
+             // string[] tab2 = new string[2];
+             //
+             // //Post post = new Post("DDDD", "Katana", "ddd", tab , time);
+             // Post post2 = new Post("ddd", "Katana", "ddd", tab2 , time2);
+             // //Post post3 = new Post("ddd", "Katana", "ddd", tab , time3);
         }
     }
 }
