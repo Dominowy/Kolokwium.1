@@ -17,64 +17,12 @@ namespace Kolokwium._1
     //zadanie3
     public class Post
     {
-        private string _autor = "dominik";
-
-        public string Autor
-        {
-            get
-            {
-                return _autor;
-            }
-            set
-            {
-                _autor = value;
-            }
-        }
-
-        private string _tytul = "WWW";
-
-        public string Tytul
-        {
-            get
-            {
-                return _tytul;
-            }
-            set
-            {
-                _tytul = value;
-            }
-            
-        }
+        public string Autor { get; set; }
+        public string Tytul { get; set; }
+        public string Tresc { get; set; }
+        public string[] Tagi{ get; set; }
+        public DateTime Czas { get; set; }
         
-        private string _tresc = "dddd";
-
-        public string Tresc
-        {
-            get
-            {
-                return _tresc;
-            }
-            set
-            {
-                _tresc = value;
-            }
-            
-        }
-        public string[] Tagi;
-        public DateTime _czas = DateTime.Now;
-
-        public DateTime Czas
-        {
-            get
-            {
-                return _czas;
-            }
-            set
-            {
-                _czas = value;
-            }
-            
-        }
 
         public Post(string tytul, string autor,string tresc, string[] tagi, DateTime czas)
         {
@@ -187,12 +135,9 @@ namespace Kolokwium._1
              
              //Post post = new Post("DDDD", "Katana", "ddd", tab , time);
              Post post2 = new Post("ddd", "Katana", "ddd", tab ,time);
+             
              post2.wypisz();
 
-             post2.Czas = time;
-             post2.wypisz();
-             Console.WriteLine(post2.Autor);
-             
              //Post post3 = new Post("ddd", "Katana", "ddd", tab , time3);
         }
     }
