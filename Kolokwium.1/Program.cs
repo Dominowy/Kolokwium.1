@@ -15,14 +15,67 @@ namespace Kolokwium._1
     }
     
     //zadanie3
-    class Post
+    public class Post
     {
-        public string Autor;
-        public string Tytul;
-        public string Tresc;
-        public string[] Tagi;
-        public DateTime Czas;
+        private string _autor = "dominik";
+
+        public string Autor
+        {
+            get
+            {
+                return _autor;
+            }
+            set
+            {
+                _autor = value;
+            }
+        }
+
+        private string _tytul = "WWW";
+
+        public string Tytul
+        {
+            get
+            {
+                return _tytul;
+            }
+            set
+            {
+                _tytul = value;
+            }
+            
+        }
         
+        private string _tresc = "dddd";
+
+        public string Tresc
+        {
+            get
+            {
+                return _tresc;
+            }
+            set
+            {
+                _tresc = value;
+            }
+            
+        }
+        public string[] Tagi;
+        public DateTime _czas = DateTime.Now;
+
+        public DateTime Czas
+        {
+            get
+            {
+                return _czas;
+            }
+            set
+            {
+                _czas = value;
+            }
+            
+        }
+
         public Post(string tytul, string autor,string tresc, string[] tagi, DateTime czas)
         {
             DateTime time = new DateTime(2000, 1, 1);
@@ -46,15 +99,12 @@ namespace Kolokwium._1
                 Tresc = tresc;
                 Tagi = tagi;
                 Czas = czas;
-
-                wypisz();
             }
         }
         public void wypisz()
         {
-             Console.WriteLine("Tytul: {0} \n Autor: {1} \n Tresc: {2} \n tagi: {3} {4} \n Data: {5}"
-                 , Tytul, Autor, Tresc, Tagi[0],Tagi[1], Czas);
-             
+             Console.WriteLine("Tytul: {0} \n Autor: {1} \n Tresc: {2} \n Data: {3}"
+               , Tytul, Autor, Tresc, Czas);
         }
     }
     class Program
@@ -118,26 +168,32 @@ namespace Kolokwium._1
             
             //zadanie2 - test
             
-             Console.WriteLine("Zadanie2\n");
-             Console.WriteLine("Parzyste\n");
-             DowolnaParam("1","2","3","5","6","7");
-             Console.WriteLine("\n");
-             Console.WriteLine("Nieparzyste\n");
-             DowolnaParam("1","2","3","5","6","7","8");
+             // Console.WriteLine("Zadanie2\n");
+             // Console.WriteLine("Parzyste\n");
+             // DowolnaParam("1","2","3","5","6","7");
+             // Console.WriteLine("\n");
+             // Console.WriteLine("Nieparzyste\n");
+             // DowolnaParam("1","2","3","5","6","7","8");
             
              //zadanie3 - test
             
-             // Console.WriteLine("Zadanie3");
-             // DateTime time = new DateTime(2002, 1, 1);
-             // DateTime time2 = new DateTime(2002, 1, 1);
-             // DateTime time3 = new DateTime(2013, 1, 1);
-             //
-             // string[] tab = new string[2] {"dom", "dom2"};
-             // string[] tab2 = new string[2];
-             //
-             // //Post post = new Post("DDDD", "Katana", "ddd", tab , time);
-             // Post post2 = new Post("ddd", "Katana", "ddd", tab2 , time2);
-             // //Post post3 = new Post("ddd", "Katana", "ddd", tab , time3);
+             Console.WriteLine("Zadanie3");
+             DateTime time = new DateTime(1999, 1, 1);
+             DateTime time2 = new DateTime(2002, 1, 1);
+             DateTime time3 = new DateTime(2013, 1, 1);
+             
+             string[] tab = new string[2] {"dom", "dom2"};
+             string[] tab2 = new string[2]{"ddd", ""};
+             
+             //Post post = new Post("DDDD", "Katana", "ddd", tab , time);
+             Post post2 = new Post("ddd", "Katana", "ddd", tab ,time);
+             post2.wypisz();
+
+             post2.Czas = time;
+             post2.wypisz();
+             Console.WriteLine(post2.Autor);
+             
+             //Post post3 = new Post("ddd", "Katana", "ddd", tab , time3);
         }
     }
 }
