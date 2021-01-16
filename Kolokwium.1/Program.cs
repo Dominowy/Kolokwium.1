@@ -36,23 +36,20 @@ namespace Kolokwium._1
             {
                 Console.WriteLine("Za stara data utworzenia!!");
             }
-            else if (string.IsNullOrEmpty(tagi[0]) || string.IsNullOrEmpty(tagi[1]))
+            else if (string.IsNullOrEmpty(tagi[0]))
             {
                 Console.WriteLine("Tablica jest pusta!");
             }
-            else
-            {
-                Tytul = tytul;
-                Autor = autor;
-                Tresc = tresc;
-                Tagi = tagi;
-                Czas = czas;
-            }
+            Tytul = tytul;
+            Autor = autor;
+            Tresc = tresc;
+            Tagi = tagi;
+            Czas = czas;
         }
         public void wypisz()
         {
-             Console.WriteLine("Tytul: {0} \n Autor: {1} \n Tresc: {2} \n Data: {3}"
-               , Tytul, Autor, Tresc, Czas);
+             Console.WriteLine("Tytul: {0} \n Autor: {1} \n Tresc: {2}\n Tagi: {3}\n Data: {4}"
+               , Tytul, Autor, Tresc, Tagi[0], Czas);
         }
     }
     class Program
@@ -130,11 +127,11 @@ namespace Kolokwium._1
              DateTime time2 = new DateTime(2002, 1, 1);
              DateTime time3 = new DateTime(2013, 1, 1);
              
-             string[] tab = new string[2] {"dom", "dom2"};
-             string[] tab2 = new string[2]{"ddd", ""};
+             string[] tab = new string[1] {""};
+             string[] tab2 = new string[1]{"ddd"};
              
              //Post post = new Post("DDDD", "Katana", "ddd", tab , time);
-             Post post2 = new Post("ddd", "Katana", "ddd", tab ,time);
+             Post post2 = new Post("ddd", "Katana", "ddd", tab2 ,time2);
              
              post2.wypisz();
 
