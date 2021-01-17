@@ -107,6 +107,9 @@ namespace Poprawa_2
             
             //Zadanie2
             
+            
+            //Zadanie3
+            
             Ogloszenie ogloszenie = new Ogloszenie("ddd", "rrr", 20, DateTime.Now, "999999999");
 
 
